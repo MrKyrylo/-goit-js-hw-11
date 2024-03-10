@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import { renderMarcup } from './js/render-functions';
+import { renderMarkup } from './js/render-functions';
 import { fetchImages } from './js/pixabay-api';
 
 const lightbox = new SimpleLightbox('.gallery a', {
@@ -25,8 +25,8 @@ function onSubmit(event) {
 
   fetchImages(searchWord)
     .then(data => {
-      const marcup = renderMarcup(data);
-      container.insertAdjacentHTML('beforeend', marcup);
+      const markup = renderMarkup(data);
+      container.insertAdjacentHTML('beforeend', markup);
 
       lightbox.refresh();
     })
